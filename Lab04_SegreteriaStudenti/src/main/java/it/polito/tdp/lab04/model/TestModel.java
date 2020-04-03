@@ -6,10 +6,12 @@ public class TestModel {
 
 		Model model = new Model();
 		
-		/*
-		 * 	Write here your test model
-		 */
-
+		System.out.println(model.getElencoCorsi());
+		System.out.println("----");
+		System.out.println(model.getStudenteByMatricola(new Studente(146101, "VIGGIANO", "CLAUDIO","CIN1T3")));
+		System.out.println("----");
+		System.out.println(model.getStudentiIscrittiAlCorso(new Corso("01KSUPG", 8,"Gestione dell'innovazione e sviluppo prodotto",2)));
+		
 	}
 
 }
