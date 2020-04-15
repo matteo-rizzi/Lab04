@@ -65,8 +65,8 @@ public class FXMLController {
 			txtResult.setText("Hai inserito una matricola con un formato errato! Usa solo caratteri numerici.");
 			return;
 		}
-		
-		Studente studente = this.model.cercaStudente(matricola);
+
+		Studente studente = this.model.getStudenteByMatricola(new Studente(matricola, null, null, null));
 
 		List<Corso> corsi = this.model.getCorsiPerStudente(studente);
 		if (corsi == null) {
@@ -108,12 +108,13 @@ public class FXMLController {
 			txtResult.setText("Hai inserito una matricola con un formato errato! Usa solo caratteri numerici.");
 			return;
 		}
-		
-		Studente s = this.model.cercaStudente(matricola);
 
-		Studente studente = model.getStudenteByMatricola(s);
-		if (studente == null)
+		Studente studente = this.model.getStudenteByMatricola(new Studente(matricola, null, null, null));
+
+		if (studente.getMatricola() == null) {
 			txtResult.setText("La matricola inserita non corrisponde ad alcuno studente!");
+			return;
+		}
 		txtNome.setText(studente.getNome());
 		txtCognome.setText(studente.getCognome());
 
@@ -132,22 +133,22 @@ public class FXMLController {
 		txtResult.clear();
 		int matricola = -1;
 		Corso corso = this.boxCorso.getValue();
-		
+
 		try {
 			matricola = Integer.parseInt(txtMatricola.getText());
 		} catch (NumberFormatException e) {
 			txtResult.setText("Hai inserito una matricola con un formato errato! Usa solo caratteri numerici.");
 			return;
 		}
-		
-		Studente studente = this.model.cercaStudente(matricola);
-		if(this.model.studenteIscrittoACorso(studente, corso))
+
+		Studente studente = this.model.getStudenteByMatricola(new Studente(matricola, null, null, null));
+		if (this.model.studenteIscrittoACorso(studente, corso))
 			txtResult.setText("Studente già iscritto a questo corso");
-		else if(this.model.iscriviStudenteACorso(studente, corso))
+		else if (this.model.iscriviStudenteACorso(studente, corso))
 			txtResult.setText("Studente iscritto al corso!");
 		else
 			txtResult.setText("Errore nell'inserimento dello studente al corso!");
-		
+
 	}
 
 	@FXML

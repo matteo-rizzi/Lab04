@@ -2,7 +2,7 @@ package it.polito.tdp.lab04.model;
 
 public class Studente {
 
-	private int matricola;
+	private Integer matricola;
 	private String cognome;
 	private String nome;
 	private String corsoDiStudi;
@@ -15,7 +15,7 @@ public class Studente {
 	 * @param nome         nome dello studente
 	 * @param corsoDiStudi corso di studi a cui lo studente è iscritto
 	 */
-	public Studente(int matricola, String cognome, String nome, String corsoDiStudi) {
+	public Studente(Integer matricola, String cognome, String nome, String corsoDiStudi) {
 		super();
 		this.matricola = matricola;
 		this.cognome = cognome;
@@ -34,11 +34,11 @@ public class Studente {
 
 	}
 
-	public int getMatricola() {
+	public Integer getMatricola() {
 		return matricola;
 	}
 
-	public void setMatricola(int matricola) {
+	public void setMatricola(Integer matricola) {
 		this.matricola = matricola;
 	}
 

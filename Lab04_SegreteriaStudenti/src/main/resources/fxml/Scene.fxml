@@ -6,8 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -57,17 +56,16 @@
                         <Insets />
                      </HBox.margin>
                   </TextField>
-                  <Button fx:id="btnCompleta" contentDisplay="CENTER" mnemonicParsing="false" onAction="#completaInserimento" text="V">
+                  <Button fx:id="btnCompleta" contentDisplay="CENTER" mnemonicParsing="false" onAction="#completaInserimento" style="-fx-background-color: green;" text="✔" textFill="WHITE">
                      <HBox.margin>
                         <Insets left="7.0" right="7.0" />
                      </HBox.margin>
                      <effect>
-                        <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.0" specularExponent="0.0" surfaceScale="0.45">
-                           <light>
-                              <Light.Distant color="#2fff00" />
-                           </light>
-                        </Lighting>
+                        <Blend />
                      </effect>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </Button>
                   <TextField fx:id="txtNome" editable="false">
                      <HBox.margin>

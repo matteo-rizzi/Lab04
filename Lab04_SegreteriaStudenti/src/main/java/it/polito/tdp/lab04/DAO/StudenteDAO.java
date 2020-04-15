@@ -28,7 +28,7 @@ public class StudenteDAO {
 
 			while (rs.next()) {
 
-				int matricola = rs.getInt("matricola");
+				Integer matricola = rs.getInt("matricola");
 				String cognome = rs.getString("cognome");
 				String nome = rs.getString("nome");
 				String cds = rs.getString("CDS");
@@ -60,7 +60,7 @@ public class StudenteDAO {
 
 			while (rs.next()) {
 
-				int matricola = rs.getInt("matricola");
+				Integer matricola = rs.getInt("matricola");
 				String cognome = rs.getString("cognome");
 				String nome = rs.getString("nome");
 				String cds = rs.getString("CDS");
